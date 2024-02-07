@@ -1,0 +1,32 @@
+#include <fstream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+long long vec[100001], gravitatie;
+
+int main()
+{
+    ifstream cin("gravitatie.in");
+    ofstream cout("gravitatie.out");
+    
+    int n;
+    cin >> n;
+   
+    for(int i = 0; i < n; i ++){
+        cin >> vec[i];
+    }
+    
+    sort(vec, vec + n);
+
+    for(int i = 0; i < n; i ++){
+        if(vec[i] != vec[i + 1]){
+            gravitatie ++;
+        }
+    }
+    
+    cout << gravitatie;
+
+    return 0;
+}
